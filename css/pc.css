@@ -1,0 +1,9 @@
+.l-container{
+  width: 90vw;
+  height: 90vh;
+  margin: 0 auto;
+}
+
+.section-title{
+  font-size: 80px;
+}
