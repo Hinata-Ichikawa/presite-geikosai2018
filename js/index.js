@@ -2,7 +2,6 @@ $(function() {
     $('#pagepiling').pagepiling({
         menu: '#nav',
         sectionSelector: '.section',
-        sectionsColor: ['#fff', '#eee', '#ddd', '#ccc' ,'#aaa'],
         anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
         navigation: {
             'textColor': '#000',
