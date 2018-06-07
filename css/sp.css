@@ -64,7 +64,7 @@ p{
 }
 
 .section-main{
-  /* padding: 0 36px; */
+  padding: 0 36px;
   width: 100%;
   margin-top: 30px;
 }
@@ -73,17 +73,16 @@ p{
   background-size: 101%;
 }
 
-.s1{
+/* .s1{
   background-color: var(--black);
-}
+} */
 
-.s2{
+/* .s2{
   background-color: var(--themered);
-  background-image: url(../images/logo/s2.png);
-}
+} */
 
 
-.s3{
+/* .s3{
   background-color: var(--themewhite);
   background-image: url(../images/logo/s3.png);
 }
@@ -95,7 +94,7 @@ p{
 
 .s5{
   background-color: var(--themewhite);
-}
+} */
 
 
 
@@ -172,7 +171,11 @@ p{
   position: absolute;
   transform-origin: top left;
   transform: scale(0.5);
+  display: none;
 }
+
+
+
 
 
 
@@ -369,9 +372,15 @@ p{
 }
 
 .b_icon{
+  transition: 0.2s;
+  transform: scale(0);
   width: calc(100% / 4);
   height: 60px;
   margin: 0;
+}
+
+.active .b_icon{
+  transform: scale(1);
 }
 
 .b_icon img{
@@ -457,7 +466,7 @@ p{
 
 .geikosai-logo{
   display: block;
-  width: 75%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -467,6 +476,13 @@ p{
 
 
 
+
+
+.content__text,
+.content__title,
+.active-contents{
+  transform: scale(0);
+}
 
 
 .active{
@@ -481,23 +497,21 @@ p{
 .active .content__title,
 .active .content__text{
   position: relative;
-  transform: scale(0);
 }
 
 
 .active .content__title{
-  animation: textscale 1s ease .9s forwards, glitch-anim-text var(--time-anim) calc(var(--delay-anim) + var(--time-anim) * 0.2) linear infinite;
+  animation: textscale 1s ease forwards, glitch-anim-text var(--time-anim) calc(var(--delay-anim) + var(--time-anim) * 0.2) linear infinite;
 }
 
 .active .content__text{
-  animation: textscale 1.3s ease 1.2s forwards, glitch-anim-text var(--time-anim) calc(var(--delay-anim) + var(--time-anim) * 0.25) linear infinite;
+  animation: textscale 1.3s ease forwards, glitch-anim-text var(--time-anim) calc(var(--delay-anim) + var(--time-anim) * 0.25) linear infinite;
 }
 
 
 
 .active .active-contents{
-  transform: scale(0);
-  animation: textscale 1.5s ease 1.2s forwards;
+  animation: textscale 1.5s ease forwards;
 }
 
 
@@ -588,7 +602,7 @@ p{
 	--blend-mode-4: none;
 	--blend-mode-5: none;
 	--blend-color-1: #bbb;
-	--blend-color-2: transparent;
+	--blend-color-2: var(--themered);
 	--blend-color-3: var(--themewhite);
 	--blend-color-4: var(--themeblack);
 	--blend-color-5: var(--themered);
@@ -767,6 +781,7 @@ p{
 }
 
 .glitch:hover .glitch__img:nth-child(2) {
+  opacity: 0.6;
 	transform: translate3d(var(--gap-horizontal),0,0);
 	animation: glitch-anim-1-horizontal var(--time-anim) infinite linear alternate;
 }
@@ -971,4 +986,82 @@ p{
 		opacity: 0;
 		transform: translate3d(0,0,0);
 	}
+}
+
+
+
+
+
+
+.bg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--themered);
+  z-index: -999;
+}
+
+.parallelogram{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+  transform: translateY(0px) skewY(calc(var(--skew) * -1));
+  transition: .5s;
+  --skew: -13deg;
+}
+
+.parallelogram1 {
+  top: -50%;
+}
+
+.parallelogram2 {
+  top: 49%;
+}
+
+.s2ActiveParallelogram.parallelogram1,
+.s4ActiveParallelogram.parallelogram1 {
+  transform: translateY(-28%) skewY(var(--skew));
+}
+
+.s2ActiveParallelogram.parallelogram2,
+.s4ActiveParallelogram.parallelogram2 {
+  transform: translateY(30%) skewY(var(--skew));
+}
+
+.s2ActiveBg.bg {
+  background: var(--themered);
+}
+
+.s3ActiveParallelogram.parallelogram1 {
+  transform: translateY(-43%) skewY(calc(var(--skew) * -1));
+  background: var(--themewhite);
+}
+
+.s3ActiveParallelogram.parallelogram2 {
+  transform: translateY(43%) skewY(calc(var(--skew) * -1));
+  background: var(--themewhite);
+}
+
+
+.s3ActiveBg.bg {
+  background: var(--black);
+}
+
+.s4ActiveBg.bg {
+  background: var(--themewhite);
+}
+
+.s5ActiveParallelogram.parallelogram1 {
+  transform: skewY(calc(var(--skew) * -1));
+  background: var(--themewhite);
+}
+
+.s5ActiveParallelogram.parallelogram2 {
+  transform: skewY(calc(var(--skew) * -1));
+  background: var(--themewhite);
+}
+
+.s5ActiveBg.bg {
+  background: var(--themewhite);
 }

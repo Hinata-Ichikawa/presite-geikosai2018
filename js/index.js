@@ -1,12 +1,14 @@
 $(function() {
     $('#pagepiling').pagepiling({
         menu: '#nav',
+        scrollingSpeed: 100,
         sectionSelector: '.section',
         anchors: ['top', 'about', 'movie', 'busho', 'welcome_to_geikosai2018'],
         navigation: {
             'textColor': '#000',
             'bulletsColor': '#000',
             'position': 'right',
+
         },
     });
 });
@@ -106,3 +108,46 @@ for(var i=0,l=modals.length; l>i; i++){
 	}
 
 } ) ;
+
+
+
+var countup = function(){
+  if($(".s2").hasClass("active")){
+    $(".parallelogram").addClass("s2ActiveParallelogram");
+  }else{
+    $(".parallelogram").removeClass("s2ActiveParallelogram");
+  }
+
+  if($(".s3").hasClass("active")){
+    $(".parallelogram").addClass("s3ActiveParallelogram");
+    $(".bg").addClass("s3ActiveBg");
+  }else{
+    $(".parallelogram").removeClass("s3ActiveParallelogram");
+    $(".bg").removeClass("s3ActiveBg");
+  }
+
+  if($(".s4").hasClass("active")){
+    $(".parallelogram").addClass("s4ActiveParallelogram");
+    $(".bg").addClass("s4ActiveBg");
+  }else{
+    $(".parallelogram").removeClass("s4ActiveParallelogram");
+    $(".bg").removeClass("s4ActiveBg");
+  }
+
+  if($(".s5").hasClass("active")){
+    $(".parallelogram").addClass("s5ActiveParallelogram");
+    $(".bg").addClass("s5ActiveBg");
+  }else{
+    $(".parallelogram").removeClass("s5ActiveParallelogram");
+    $(".bg").removeClass("s5ActiveBg");
+  }
+
+
+}
+
+
+var s2remove = function(){
+  $(".parallelogram").removeClass("s2ActiveParallelogram");
+}
+
+setInterval(countup, 100);

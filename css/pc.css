@@ -261,3 +261,9 @@ p{
   left: -40%;
   width: calc(150% + var(--gap-horizontal) * 2);
 }
+
+
+
+.parallelogram{
+  --skew: -7deg;
+}
