@@ -1,5 +1,6 @@
 $(function() {
     $('#pagepiling').pagepiling({
+        touchSensitivity: 10,
         menu: '#nav',
         scrollingSpeed: 100,
         sectionSelector: '.section',
@@ -110,8 +111,7 @@ for(var i=0,l=modals.length; l>i; i++){
 } ) ;
 
 
-
-var countup = function(){
+var locationHashChanged = function(){
   if($(".s2").hasClass("active")){
     $(".parallelogram").addClass("s2ActiveParallelogram");
   }else{
@@ -141,13 +141,8 @@ var countup = function(){
     $(".parallelogram").removeClass("s5ActiveParallelogram");
     $(".bg").removeClass("s5ActiveBg");
   }
-
-
 }
 
 
-var s2remove = function(){
-  $(".parallelogram").removeClass("s2ActiveParallelogram");
-}
-
-setInterval(countup, 100);
+window.location.hash = "top";
+window.onhashchange = locationHashChanged;

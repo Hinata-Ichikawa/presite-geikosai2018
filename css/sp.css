@@ -39,10 +39,20 @@ p{
 }
 
 
+.pp-section.pp-table,
 .pp-tableCell{
-  display: block;
-  vertical-align: top;
+  display: none;
 }
+
+.active.pp-section,
+.active .pp-table{
+  display: table;
+}
+
+.active .pp-tableCell{
+  display: table-cell;
+}
+
 
 .l-container{
   height: 100%;
@@ -69,63 +79,34 @@ p{
   margin-top: 30px;
 }
 
-.section{
-  background-size: 101%;
-}
-
-/* .s1{
-  background-color: var(--black);
-} */
-
-/* .s2{
-  background-color: var(--themered);
-} */
-
-
-/* .s3{
-  background-color: var(--themewhite);
-  background-image: url(../images/logo/s3.png);
-}
-
-.s4{
-  background-color: var(--themewhite);
-  background-image: url(../images/logo/s4.png);
-}
-
-.s5{
-  background-color: var(--themewhite);
-} */
-
 
 
 
 
 
 #logo{
+  transition: .3s;
   width: 80vw;
   margin: 0 auto;
 }
 
-#logo2{
-  width: 80vw;
-  margin: 0 auto;
-}
 
 .t_logo{
+  z-index: 5;
+  opacity: 0;
+  transition: .3s;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 40%;
   margin: auto;
   width: 85vw;
-  animation: fadein 7s ease forwards;
+  animation: fadein 3.5s ease forwards;
 }
 
+
 @keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-  80% {
+  0%, 80% {
     opacity: 0;
   }
   100% {
@@ -142,8 +123,10 @@ p{
   stroke-dasharray: 920;
   stroke-dashoffset: 0;
   stroke-width: 1;
-  animation: anim 7s ease forwards;
+  animation: anim 3s ease forwards;
 }
+
+
 
 @keyframes anim {
   0% {
@@ -372,15 +355,9 @@ p{
 }
 
 .b_icon{
-  transition: 0.2s;
-  transform: scale(0);
   width: calc(100% / 4);
   height: 60px;
   margin: 0;
-}
-
-.active .b_icon{
-  transform: scale(1);
 }
 
 .b_icon img{
@@ -501,17 +478,17 @@ p{
 
 
 .active .content__title{
-  animation: textscale 1s ease forwards, glitch-anim-text var(--time-anim) calc(var(--delay-anim) + var(--time-anim) * 0.2) linear infinite;
+  animation: textscale .2s ease forwards, glitch-anim-text var(--time-anim) calc(var(--delay-anim) + var(--time-anim) * 0.2) linear infinite;
 }
 
 .active .content__text{
-  animation: textscale 1.3s ease forwards, glitch-anim-text var(--time-anim) calc(var(--delay-anim) + var(--time-anim) * 0.25) linear infinite;
+  animation: textscale .3s ease forwards, glitch-anim-text var(--time-anim) calc(var(--delay-anim) + var(--time-anim) * 0.25) linear infinite;
 }
 
 
 
 .active .active-contents{
-  animation: textscale 1.5s ease forwards;
+  animation: textscale .3s ease forwards;
 }
 
 
@@ -565,11 +542,8 @@ p{
   0%{
     transform: scale(0,0);
   }
-  10%{
+  50%{
     transform: scale(2.5,0.1);
-  }
-  20%{
-    transform: scale(1);
   }
   100%{
     transform: scale(1);
@@ -601,7 +575,7 @@ p{
 	--blend-mode-3: luminosity;
 	--blend-mode-4: none;
 	--blend-mode-5: none;
-	--blend-color-1: #bbb;
+	--blend-color-1: #dadada;
 	--blend-color-2: var(--themered);
 	--blend-color-3: var(--themewhite);
 	--blend-color-4: var(--themeblack);
@@ -694,22 +668,21 @@ p{
 }
 
 .glitch--style-18 .glitch__img {
-  background-image: url(../images/clp/mine.png);
+  background-image: url(../images/clp/igami.png);
 }
 
 .glitch--style-19 .glitch__img {
-  background-image: url(../images/clp/hidari.png);
+  background-image: url(../images/clp/tarashi.png);
 }
 
 .glitch--style-20 .glitch__img {
-  background-image: url(../images/clp/sekimai.png);
+  background-image: url(../images/clp/chappy.png);
 }
 
 
 
 
 @media screen and (max-width: 480px){
-
 
   .glitch--style-1 .glitch__img,
   .glitch--style-2 .glitch__img,
@@ -718,25 +691,27 @@ p{
   }
 
 
-  .glitch--style-1 .glitch__img{
+  .glitch--style-1 .glitch__img,
+  .glitch--style-2 .glitch__img{
     left: 30%;
   }
 
 
-  .glitch--style-2 .glitch__img,
   .glitch--style-4 .glitch__img,
   .glitch--style-5 .glitch__img,
+  .glitch--style-8 .glitch__img,
   .glitch--style-16 .glitch__img{
     left: 20%;
   }
 
   .glitch--style-11 .glitch__img,
-  .glitch--style-17 .glitch__img{
+  .glitch--style-13 .glitch__img{
     left: 0;
   }
 
 
-  .glitch--style-15 .glitch__img{
+  .glitch--style-15 .glitch__img,
+  .glitch--style-20 .glitch__img{
     left: -15%;
   }
 
@@ -1007,7 +982,7 @@ p{
   height: 100%;
   background: var(--black);
   transform: translateY(0px) skewY(calc(var(--skew) * -1));
-  transition: .5s;
+  transition: all .4s ease;
   --skew: -13deg;
 }
 
