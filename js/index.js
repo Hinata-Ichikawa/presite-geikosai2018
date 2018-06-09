@@ -1,3 +1,21 @@
+// $(function(){
+// 	$('.st0').each(function(i){
+// 		var $this = $(this);
+// 		var path = this;
+// 		var len = path.getTotalLength();
+//     console.log(len);
+//     if(len < 1000){
+//       $(this).css("stroke","none");
+//     }
+// 	});
+// });
+
+window.onload = function() {
+  $('.st0').css("display","block");
+  $('.t_logo').css("display","inline");
+}
+
+
 $(function() {
     $('#pagepiling').pagepiling({
         touchSensitivity: 10,
@@ -112,13 +130,14 @@ for(var i=0,l=modals.length; l>i; i++){
 
 
 var locationHashChanged = function(){
-  if($(".s2").hasClass("active")){
+
+  if(location.hash=="#about"){
     $(".parallelogram").addClass("s2ActiveParallelogram");
   }else{
     $(".parallelogram").removeClass("s2ActiveParallelogram");
   }
 
-  if($(".s3").hasClass("active")){
+  if(location.hash=="#movie"){
     $(".parallelogram").addClass("s3ActiveParallelogram");
     $(".bg").addClass("s3ActiveBg");
   }else{
@@ -126,7 +145,7 @@ var locationHashChanged = function(){
     $(".bg").removeClass("s3ActiveBg");
   }
 
-  if($(".s4").hasClass("active")){
+  if(location.hash=="#busho"){
     $(".parallelogram").addClass("s4ActiveParallelogram");
     $(".bg").addClass("s4ActiveBg");
   }else{
@@ -134,7 +153,7 @@ var locationHashChanged = function(){
     $(".bg").removeClass("s4ActiveBg");
   }
 
-  if($(".s5").hasClass("active")){
+  if(location.hash=="#welcome_to_geikosai2018"){
     $(".parallelogram").addClass("s5ActiveParallelogram");
     $(".bg").addClass("s5ActiveBg");
   }else{

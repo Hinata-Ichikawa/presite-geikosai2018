@@ -92,6 +92,7 @@ p{
 
 
 .t_logo{
+  display: none;
   z-index: 5;
   opacity: 0;
   transition: .3s;
@@ -115,14 +116,11 @@ p{
   }
 }
 
-.st0,
-.st1,
-.st2{
-  fill:transparent;
+.st0{
+  display: none;
+  fill: transparent;
   stroke: rgba(237, 238, 241, .6);
   stroke-dasharray: 920;
-  stroke-dashoffset: 0;
-  stroke-width: 1;
   animation: anim 3s ease forwards;
 }
 
@@ -978,7 +976,7 @@ p{
 
 .parallelogram{
   position: absolute;
-  width: 100%;
+  width: 110%;
   height: 100%;
   background: var(--black);
   transform: translateY(0px) skewY(calc(var(--skew) * -1));
