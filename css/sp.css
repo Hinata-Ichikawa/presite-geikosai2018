@@ -16,6 +16,7 @@ body{
   --themered: #C81528;
   --themewhite: #EDEEF1;
   --black: #000;
+  background-color: black;
 }
 
 h2{
@@ -38,10 +39,16 @@ p{
   color: var(--black);
 }
 
+.section{
+  margin: 0 auto;
+  min-width: 90%;
+}
+
 
 .pp-section.pp-table,
 .pp-tableCell{
   display: none;
+  margin: 0 auto;
 }
 
 .active.pp-section,
@@ -87,6 +94,7 @@ p{
 #logo{
   transition: .3s;
   width: 80vw;
+  max-height: 95vh;
   margin: 0 auto;
 }
 
@@ -440,8 +448,9 @@ p{
 
 
 .geikosai-logo{
+  max-height: 100vh;
   display: block;
-  width: 90%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -466,7 +475,7 @@ p{
 	--gap-horizontal-1: 10px;
 	--gap-vertical: 5px;
 	--time-anim: 3s;
-	--delay-anim: 1.5s;
+	--delay-anim: 0s;
 }
 
 .active .content__title,
@@ -749,30 +758,34 @@ p{
 	opacity: 0;
 }
 
-.glitch:hover .glitch__img:nth-child(n+2) {
+
+
+.activeGlitch .glitch__img:nth-child(n+2) {
 	opacity: 1;
 }
 
-.glitch:hover .glitch__img:nth-child(2) {
+.activeGlitch .glitch__img:nth-child(2) {
   opacity: 0.6;
 	transform: translate3d(var(--gap-horizontal),0,0);
 	animation: glitch-anim-1-horizontal var(--time-anim) infinite linear alternate;
 }
 
-.glitch:hover > .glitch__img:nth-child(3) {
+.activeGlitch > .glitch__img:nth-child(3) {
 	transform: translate3d(calc(-1 * var(--gap-horizontal)),0,0);
 	animation: glitch-anim-2-horizontal var(--time-anim) infinite linear alternate;
 }
 
-.glitch:hover > .glitch__img:nth-child(4) {
+.activeGlitch > .glitch__img:nth-child(4) {
 	transform: translate3d(0, calc(-1 * var(--gap-vertical)), 0) scale3d(-1,-1,1);
 	animation: glitch-anim-3-horizontal var(--time-anim) infinite linear alternate;
 }
 
 /* Hover flash animation on last image */
-.glitch:hover > .glitch__img:nth-child(5) {
+.activeGlitch > .glitch__img:nth-child(5) {
 	animation: glitch-anim-flash 0.5s steps(1,end) infinite;
 }
+
+
 
 
 @keyframes glitch-anim-1-horizontal {
@@ -963,9 +976,6 @@ p{
 
 
 
-
-
-
 .bg{
   position: absolute;
   width: 100%;
@@ -976,6 +986,9 @@ p{
 
 .parallelogram{
   position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
   width: 110%;
   height: 100%;
   background: var(--black);
@@ -983,6 +996,7 @@ p{
   transition: all .4s ease;
   --skew: -13deg;
 }
+
 
 .parallelogram1 {
   top: -50%;
@@ -1037,4 +1051,142 @@ p{
 
 .s5ActiveBg.bg {
   background: var(--themewhite);
+}
+
+
+
+@media screen and (orientation: landscape) and (max-width: 812px) {
+  h2{
+    margin-top: -15px;
+    font-size: 35px;
+  }
+
+  .section-main{
+    margin-top: 50px;
+  }
+
+ .t_logo{
+   width: 50vw;
+   bottom: 0;
+   top: 0;
+ }
+
+ .m_main{
+   margin: 50px auto 0;
+   height: auto;
+   width: 45%;
+   padding: 3% 5%;
+ }
+
+ .m_container{
+   margin: 0 auto;
+   height: 100%;
+ }
+
+ .m_container iframe{
+   height: 100%;
+ }
+
+ .b_icon{
+   width: calc(100% / 7);
+   height: 85px;
+   margin: 0;
+ }
+
+ .b_kanbu{
+   width: calc(100% / 6) !important;
+ }
+
+ .s4 .section-main {
+   width: 450px;
+   margin: 50px auto 0;
+}
+
+
+.order1,
+.order2{
+  order: 0;
+}
+
+
+.glitch__img{
+  left: 0;
+  width: calc(190% + var(--gap-horizontal) * 2);
+}
+
+.glitch--style-1 .glitch__img{
+  width: calc(170% + var(--gap-horizontal) * 2);
+}
+
+.glitch--style-3 .glitch__img{
+  width: calc(130% + var(--gap-horizontal) * 2);
+}
+
+.glitch--style-4 .glitch__img,
+.glitch--style-16 .glitch__img{
+  width: calc(210% + var(--gap-horizontal) * 2);
+}
+
+
+.glitch--style-6 .glitch__img{
+  width: calc(150% + var(--gap-horizontal) * 2);
+}
+
+.glitch--style-8 .glitch__img{
+  width: calc(250% + var(--gap-horizontal) * 2);
+}
+
+.glitch--style-9 .glitch__img,
+.glitch--style-10 .glitch__img{
+  width: calc(180% + var(--gap-horizontal) * 2);
+}
+
+
+
+.glitch--style-11 .glitch__img{
+  width: calc(100% + var(--gap-horizontal) * 2);
+}
+
+.glitch--style-12 .glitch__img{
+  width: calc(220% + var(--gap-horizontal) * 2);
+}
+
+.glitch--style-13 .glitch__img{
+  width: calc(110% + var(--gap-horizontal) * 2);
+}
+
+.glitch--style-14 .glitch__img{
+  width: calc(160% + var(--gap-horizontal) * 2);
+}
+
+.glitch--style-15 .glitch__img{
+  left: -40%;
+  width: calc(150% + var(--gap-horizontal) * 2);
+}
+
+.glitch--style-17 .glitch__img{
+  width: calc(200% + var(--gap-horizontal) * 2);
+}
+
+.glitch--style-20 .glitch__img{
+  left: -60%;
+}
+
+ .parallelogram{
+   --skew: -5deg;
+ }
+
+ .s2ActiveParallelogram.parallelogram1,
+ .s4ActiveParallelogram.parallelogram1 {
+   transform: translateY(-31%) skewY(var(--skew));
+ }
+
+ .s2ActiveParallelogram.parallelogram2,
+ .s4ActiveParallelogram.parallelogram2 {
+   transform: translateY(42%) skewY(var(--skew));
+ }
+
+ .s3ActiveParallelogram.parallelogram1 {
+    transform: translateY(-47%) skewY(calc(var(--skew) * -1));
+  }
 }

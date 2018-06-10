@@ -13,6 +13,18 @@
 window.onload = function() {
   $('.st0').css("display","block");
   $('.t_logo').css("display","inline");
+
+  // $('.glitch').hover(
+  //   function() {
+  //     console.log("on");
+  //     clearRandomEffect;
+  //   },
+  //   function() {
+  //     console.log("out");
+  //     randomEffect;
+  // });
+
+  // randomEffect();
 }
 
 
@@ -162,6 +174,35 @@ var locationHashChanged = function(){
   }
 }
 
+// var p_random = 0;
+// var p_random2 = 10;
+//
+// var randomEffect = function(){
+//   randomEffect = setInterval(function(){
+//     $('.glitch').eq(p_random).removeClass('activeGlitch');
+//     $('.glitch').eq(p_random2).removeClass('activeGlitch');
+//     var random = Math.floor(Math.random() * 20);
+//     var random2 = Math.floor(Math.random() * 20);
+//     if(random == random2){
+//       if(random != 0){
+//         random -= 1;
+//       }else{
+//         random += 19;
+//       }
+//     }
+//
+//     p_random = random;
+//     p_random2 = random2;
+//
+//     $('.glitch').eq(random).addClass('activeGlitch');
+//     $('.glitch').eq(random2).addClass('activeGlitch');
+//   },2000);
+// }
+//
+// var clearRandomEffect = function(){
+//   console.log("okk");
+//   clearInterval(randomEffect);
+// }
 
 window.location.hash = "top";
 window.onhashchange = locationHashChanged;

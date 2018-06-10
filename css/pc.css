@@ -206,7 +206,6 @@ p{
   width: calc(190% + var(--gap-horizontal) * 2);
 }
 
-
 .glitch--style-1 .glitch__img{
   width: calc(170% + var(--gap-horizontal) * 2);
 }
@@ -265,10 +264,56 @@ p{
   left: -60%;
 }
 
+.glitch:hover .glitch__img:nth-child(n+2) {
+	opacity: 1;
+}
+
+.glitch:hover .glitch__img:nth-child(2) {
+  opacity: 0.6;
+	transform: translate3d(var(--gap-horizontal),0,0);
+	animation: glitch-anim-1-horizontal var(--time-anim) infinite linear alternate;
+}
+
+.glitch:hover > .glitch__img:nth-child(3) {
+	transform: translate3d(calc(-1 * var(--gap-horizontal)),0,0);
+	animation: glitch-anim-2-horizontal var(--time-anim) infinite linear alternate;
+}
+
+.glitch:hover > .glitch__img:nth-child(4) {
+	transform: translate3d(0, calc(-1 * var(--gap-vertical)), 0) scale3d(-1,-1,1);
+	animation: glitch-anim-3-horizontal var(--time-anim) infinite linear alternate;
+}
+
+/* Hover flash animation on last image */
+.glitch:hover > .glitch__img:nth-child(5) {
+	animation: glitch-anim-flash 0.5s steps(1,end) infinite;
+}
+
 
 
 
 
 .parallelogram{
   --skew: -7deg;
+}
+
+
+@media screen and (max-width: 1024px) and (orientation: portrait){
+  #logo{
+    width: 80vw;
+  }
+
+  .t_logo{
+    width: 80vw;
+  }
+
+  .m_main{
+  	margin: 0 auto;
+   	width: 100%;
+    padding: 1% 7%;
+  }
+
+  .glitch {
+    height: 80%;
+  }
 }
