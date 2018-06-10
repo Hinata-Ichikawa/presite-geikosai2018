@@ -760,28 +760,28 @@ p{
 
 
 
-.activeGlitch .glitch__img:nth-child(n+2) {
+.glitch:active .glitch__img:nth-child(n+2) {
 	opacity: 1;
 }
 
-.activeGlitch .glitch__img:nth-child(2) {
+.glitch:active .glitch__img:nth-child(2) {
   opacity: 0.6;
 	transform: translate3d(var(--gap-horizontal),0,0);
 	animation: glitch-anim-1-horizontal var(--time-anim) infinite linear alternate;
 }
 
-.activeGlitch > .glitch__img:nth-child(3) {
+.glitch:active > .glitch__img:nth-child(3) {
 	transform: translate3d(calc(-1 * var(--gap-horizontal)),0,0);
 	animation: glitch-anim-2-horizontal var(--time-anim) infinite linear alternate;
 }
 
-.activeGlitch > .glitch__img:nth-child(4) {
+.glitch:active > .glitch__img:nth-child(4) {
 	transform: translate3d(0, calc(-1 * var(--gap-vertical)), 0) scale3d(-1,-1,1);
 	animation: glitch-anim-3-horizontal var(--time-anim) infinite linear alternate;
 }
 
 /* Hover flash animation on last image */
-.activeGlitch > .glitch__img:nth-child(5) {
+.glitch:active > .glitch__img:nth-child(5) {
 	animation: glitch-anim-flash 0.5s steps(1,end) infinite;
 }
 
