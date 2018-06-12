@@ -17,18 +17,19 @@ body{
   --themewhite: #EDEEF1;
   --black: #000;
   background-color: black;
+  -webkit-text-size-adjust:100%
 }
 
 h2{
   font-family: 'Avenir';
   font-style: italic;
   font-weight: 500;
-  font-size: 40px;
-  margin: 15px 0 0 0;
+  font-size: 35px;
+  margin: 0 0 5px 0;
 }
 
 h3{
-  font-size: 14px;
+  font-size: 11px;
   margin: -12px 0 0 0;
   font-weight: 100;
 }
@@ -83,7 +84,7 @@ p{
 .section-main{
   padding: 0 36px;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 
@@ -412,7 +413,7 @@ p{
 }
 
 
-.modal-content p{
+.modal-content p:first-child{
   display: inline-block;
   background-color: var(--themeblack);
   color: var(--themewhite);
@@ -424,7 +425,7 @@ p{
 
 .modal-content img{
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 10%;
 	width: 60%;
 }
 
@@ -1003,9 +1004,10 @@ p{
 }
 
 .parallelogram{
+  --parallelogramwidth: 110%;
   z-index: -700;
   position: absolute;
-  left: 0;
+  left: -5%;
   right: 0;
   margin: auto;
   width: 110%;
@@ -1027,12 +1029,12 @@ p{
 
 .s2ActiveParallelogram.parallelogram1,
 .s4ActiveParallelogram.parallelogram1 {
-  transform: translateY(-28%) skewY(var(--skew));
+  transform: translateY(-31%) skewY(var(--skew));
 }
 
 .s2ActiveParallelogram.parallelogram2,
 .s4ActiveParallelogram.parallelogram2 {
-  transform: translateY(30%) skewY(var(--skew));
+  transform: translateY(40%) skewY(var(--skew));
 }
 
 .s2ActiveBg.bg {
