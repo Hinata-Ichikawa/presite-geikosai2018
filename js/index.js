@@ -1,30 +1,16 @@
-// $(function(){
-// 	$('.st0').each(function(i){
-// 		var $this = $(this);
-// 		var path = this;
-// 		var len = path.getTotalLength();
-//     console.log(len);
-//     if(len < 1000){
-//       $(this).css("stroke","none");
-//     }
-// 	});
-// });
+
 
 window.onload = function() {
   $('.st0').css("display","block");
+  $('.st1').css("display","block");
+  $('.st2').css("display","block");
+  $('.st3').css("display","block");
+  $('.st4').css("display","block");
+  $('.st5').css("display","block");
   $('.t_logo').css("display","inline");
+  $('#logo').css("display","inline");
+  // $('#logo').css("transform","translateX(-25%)");
 
-  // $('.glitch').hover(
-  //   function() {
-  //     console.log("on");
-  //     clearRandomEffect;
-  //   },
-  //   function() {
-  //     console.log("out");
-  //     randomEffect;
-  // });
-
-  // randomEffect();
 }
 
 
@@ -174,35 +160,39 @@ var locationHashChanged = function(){
   }
 }
 
-// var p_random = 0;
-// var p_random2 = 10;
-//
-// var randomEffect = function(){
-//   randomEffect = setInterval(function(){
-//     $('.glitch').eq(p_random).removeClass('activeGlitch');
-//     $('.glitch').eq(p_random2).removeClass('activeGlitch');
-//     var random = Math.floor(Math.random() * 20);
-//     var random2 = Math.floor(Math.random() * 20);
-//     if(random == random2){
-//       if(random != 0){
-//         random -= 1;
-//       }else{
-//         random += 19;
-//       }
-//     }
-//
-//     p_random = random;
-//     p_random2 = random2;
-//
-//     $('.glitch').eq(random).addClass('activeGlitch');
-//     $('.glitch').eq(random2).addClass('activeGlitch');
-//   },2000);
-// }
-//
-// var clearRandomEffect = function(){
-//   console.log("okk");
-//   clearInterval(randomEffect);
-// }
+
+var ua = navigator.userAgent;
+var iphone = ua.indexOf('iPhone') > 0;
+var androidSp = ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0;
+var ipad = ua.indexOf('iPad');
+var androidT = ua.indexOf('Android');
+
+if( iphone || androidSp ){
+
+  $(window).on("orientationchange", function() {
+    /* 向き切り替え時の処理 */
+
+    if (window.innerHeight > window.innerWidth) {
+       document.location.href = "http://geikousai-ncu.com/2018/chart/chart.html";
+   } else {
+       document.location.href = "http://geikousai-ncu.com/2018/pre";
+   }
+  });
+
+}else if( ipad || androidT ) {
+
+
+
+}
+
+$(window).on('touchmove.noScroll', function(e) {
+    e.preventDefault();
+});
 
 window.location.hash = "top";
 window.onhashchange = locationHashChanged;
+
+
+function movieImageNone(){
+  $('.movieImage').css("display","none");
+}
