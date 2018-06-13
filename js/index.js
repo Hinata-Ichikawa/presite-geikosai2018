@@ -11,6 +11,20 @@ window.onload = function() {
   $('#logo').css("display","inline");
   // $('#logo').css("transform","translateX(-25%)");
 
+  if( iphone || androidSp ){
+
+    $(window).on("orientationchange", function() {
+      /* 向き切り替え時の処理 */
+
+      if (window.innerHeight > window.innerWidth) {
+         document.location.href = "http://geikousai-ncu.com/2018/chart/chart.html";
+     } else {
+         document.location.href = "http://geikousai-ncu.com/2018/pre";
+     }
+    });
+
+  }
+
 }
 
 
@@ -80,7 +94,7 @@ for(var i=0,l=modals.length; l>i; i++){
 		$( nowModalSyncer ).fadeIn( "slow" ) ;
 
 		//[#modal-overlay]、または[#modal-close]をクリックしたら…
-		$( "#modal-overlay,#modal-close" ).unbind().click( function() {
+		$( "#modal-overlay,.clearButton" ).unbind().click( function() {
 
 			//[#modal-content]と[#modal-overlay]をフェードアウトした後に…
 			$( "#" + target + ",#modal-overlay" ).fadeOut( "fast" , function() {
@@ -193,6 +207,10 @@ window.location.hash = "top";
 window.onhashchange = locationHashChanged;
 
 
-function movieImageNone(){
-  $('.movieImage').css("display","none");
-}
+history.pushState(null, null, null);
+$(window).on("popstate", function (event) {
+    if (!event.originalEvent.state) {
+        history.pushState(null, null, null);
+        return;
+    }
+});
