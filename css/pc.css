@@ -117,13 +117,9 @@ p{
 
 
 .b_icon{
-  width: calc(100% / 7);
+  width: calc(100% / 7) !important;
   height: 175px;
   margin: 0;
-}
-
-.b_kanbu{
-  width: calc(100% / 6) !important;
 }
 
 .s4 .section-main{
@@ -150,6 +146,23 @@ p{
 .order2{
   order: 0;
 }
+
+
+.b_chart{
+  display: block;
+}
+
+.glitch--style-chart .glitch__img {
+  background-image: url(../images/clp/sunao.png);
+}
+
+.rotateImage{
+  display: none;
+}
+
+
+
+
 
 
 

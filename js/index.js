@@ -1,4 +1,13 @@
+$(function(){
 
+  if( iphone || androidSp ){
+      /* 向き切り替え時の処理 */
+      if (window.innerHeight < window.innerWidth) {
+         document.location.href = "http://geikousai-ncu.com/2018/chart/chart.html";
+      }
+  }
+
+});
 
 window.onload = function() {
   $('.st0').css("display","block");
@@ -10,20 +19,6 @@ window.onload = function() {
   $('.t_logo').css("display","inline");
   $('#logo').css("display","inline");
   // $('#logo').css("transform","translateX(-25%)");
-
-  if( iphone || androidSp ){
-
-    $(window).on("orientationchange", function() {
-      /* 向き切り替え時の処理 */
-
-      if (window.innerHeight > window.innerWidth) {
-         document.location.href = "http://geikousai-ncu.com/2018/chart/chart.html";
-     } else {
-         document.location.href = "http://geikousai-ncu.com/2018/pre";
-     }
-    });
-
-  }
 
 }
 
@@ -181,23 +176,24 @@ var androidSp = ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0;
 var ipad = ua.indexOf('iPad');
 var androidT = ua.indexOf('Android');
 
-if( iphone || androidSp ){
 
-  $(window).on("orientationchange", function() {
+
+  $(window).on("orientationchange resize", function() {
+
+    ua = navigator.userAgent;
+    iphone = ua.indexOf('iPhone') > 0;
+    androidSp = ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0;
+    ipad = ua.indexOf('iPad');
+    androidT = ua.indexOf('Android');
+
     /* 向き切り替え時の処理 */
-
-    if (window.innerHeight > window.innerWidth) {
-       document.location.href = "http://geikousai-ncu.com/2018/chart/chart.html";
-   } else {
-       document.location.href = "http://geikousai-ncu.com/2018/pre";
+    if( iphone || androidSp ){
+      if (window.innerHeight < window.innerWidth) {
+         document.location.href = "http://geikousai-ncu.com/2018/chart/chart.html";
+     }
    }
   });
 
-}else if( ipad || androidT ) {
-
-
-
-}
 
 $(window).on('touchmove.noScroll', function(e) {
     e.preventDefault();
