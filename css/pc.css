@@ -132,11 +132,16 @@ p{
   height: 70%;
 }
 
-.modal-content img{
+.modal-content p{
+  font-size: 14px;
+}
+
+.modal-content .modal-cho{
+  margin: 0 auto 5%;
 	width: 50%;
 }
 
-.modal-content p{
+.modal-content .modal-name{
   margin-top: 2%;
   padding: 5px;
   font-size: 24px;

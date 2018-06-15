@@ -281,31 +281,30 @@ p{
   background-color: var(--black);
   color: var(--themered);
   letter-spacing: 2px;
-  margin: 0  0 12px 0;
+  margin: 0 0 10px 0;
 }
 
 .a_mainbox p{
   text-align: left;
-  line-height: 1.3em;
+  line-height: 1.2em;
 }
 
 
 .a_mainbox .a_theme{
   font-weight: bold;
   font-size: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
 .a_mainbox table{
   color: var(--black);
-  margin: -10px auto 10px;
+  margin: -10px auto 5px;
   font-size: 11px;
 }
 
 .a_mainbox td{
   padding: 0;
-  height: 11px;
 }
 
 
@@ -365,7 +364,7 @@ p{
 }
 
 .s4 .section-main{
-  padding: 0 10%;
+  padding: 0 11%;
 }
 
 
@@ -386,7 +385,7 @@ p{
 
 .b_icon{
   width: calc(100% / 4);
-  height: 60px;
+  height: 55px;
   margin: 0;
 }
 
@@ -422,7 +421,7 @@ p{
 }
 
 
-.modal-name{
+.modal-content .modal-name{
   display: inline-block;
   background-color: var(--themeblack);
   color: var(--themewhite);
@@ -432,11 +431,21 @@ p{
 }
 
 
-.modal-content img{
+.modal-cho{
   display: block;
   margin: 5% auto 10%;
 	width: 60%;
 }
+
+
+.modal-icon{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+}
+
 
 #modal-overlay {
 	z-index: 10 ;
@@ -805,11 +814,6 @@ p{
 
 
 
-
-.glitch__img:nth-child(1) {
-	filter: grayscale(80%);
-}
-
 .glitch__img:nth-child(2) {
 	background-color: var(--blend-color-2);
 	background-blend-mode: var(--blend-mode-2);
@@ -1078,7 +1082,7 @@ p{
 
 .s2ActiveParallelogram.parallelogram1{
   background: var(--themered);
-  transform: scaleY(0.65) skewY(var(--skew)) translateY(5%);
+  transform: scaleY(0.68) skewY(var(--skew)) translateY(5%);
 }
 
 .s2ActiveBg.bg {
