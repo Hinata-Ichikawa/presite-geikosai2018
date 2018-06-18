@@ -105,22 +105,23 @@ p{
 #logo{
   display: none;
   position: absolute;
-  left: -15%;
-  bottom: 20%;
-  width: 100vw;
-  animation: transformLeft .5s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards;
+  left: 5%;
+  top: 30%;
+  width: 120vw;
+  animation: transformRight .5s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards;
 }
+
 
 @media screen and (max-width: 480px){
 
-  @keyframes transformLeft {
+  @keyframes transformRight {
     0%{
-     left: -15%;
-     bottom: 20%;
+     left: 5%;
+     top: 30%;
     }
     100%{
-      left: -35%;
-      bottom: 13%;
+      left: 15%;
+      top: 40%;
     }
   }
 
@@ -133,29 +134,28 @@ p{
   opacity: 0;
   transition: .3s;
   position: absolute;
-  width: 30%;
-  animation: transformRight .5s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards;
+  width: 28%;
+  animation: transformLeft .5s cubic-bezier(0.645, 0.045, 0.355, 1) 3s forwards;
 }
 
 @media screen and (max-width: 480px){
 
-  @keyframes transformRight {
+  @keyframes transformLeft {
     0%{
       opacity: 0;
-      top: 45%;
-      right: 20%;
+      top: 43%;
+      left: 25%;
     }
     100%{
       opacity: 1;
-      top: 35%;
-      right: 5%;
+      top: 37%;
+      left: 15%;
     }
   }
 
 }
 
-
-.st0{
+.st5{
   display: none;
   fill: transparent;
   stroke-dasharray: 4000;
@@ -187,11 +187,11 @@ p{
 }
 
 @keyframes fadeinColor1 {
-  0%, 80% {
+  0%, 75% {
     fill: transparent;
   }
   100% {
-    fill: #EEEEF1;
+    fill: #7B4287;
   }
 }
 
@@ -206,7 +206,7 @@ p{
     fill: transparent;
   }
   100% {
-    fill: #7B4287;
+    fill: #69A947;
   }
 }
 
@@ -221,7 +221,7 @@ p{
     fill: transparent;
   }
   100% {
-    fill: #69A947;
+    fill: #BC1D29;
   }
 }
 
@@ -236,22 +236,22 @@ p{
     fill: transparent;
   }
   100% {
-    fill: #BC1D29;
+    fill: #D9BD26;
   }
 }
 
-.st5{
+.st0{
   display: none;
   fill: transparent;
   animation: fadeinColor5 3s ease forwards;
 }
 
 @keyframes fadeinColor5 {
-  0%, 75% {
+  0%, 80% {
     fill: transparent;
   }
   100% {
-    fill: #D9BD26;
+    fill: var(--themewhite);
   }
 }
 
@@ -385,7 +385,7 @@ p{
 
 .b_icon{
   width: calc(100% / 4);
-  height: 55px;
+  height: 50px;
   margin: 0;
 }
 
